@@ -1,7 +1,7 @@
 /*
  * Modulifier || Code released under the UNLICENSE
  * Code under other copyrights & licenses listed below.
- * https://modulifier.web-dev.tools/#responsive;images;list-group;embed;media-object;accessibility;print
+ * https://modulifier.web-dev.tools/#responsive;images;list-group;embed;positioning;nice-lists
  */
 
 @-moz-viewport { width: device-width; scale: 1; }
@@ -209,233 +209,31 @@ svg.img-flex {
   width: 100%;
 }
 
-.media {
-  overflow: hidden;
+.inline {
+  display: inline;
 }
 
-.media-img, .media__img {
-  float: left;
+.block {
+  display: block;
 }
 
-.media-img-reversed, .media__img--reversed {
-  float: right;
+.inline-block, .ib {
+  display: inline-block;
 }
 
-.media-img-stacked, .media__img--stacked {
-  float: none;
+.relative {
+  position: relative;
 }
 
-.media-body, .media__body {
-  overflow: hidden;
-  min-width: 12em; /* Slightly less than 200px, responsiveness built in */
-}
-
-a:hover, a:active {
-  outline: none;
-}
-
-a:focus,
-[tabindex="0"]:focus,
-details:focus,
-summary:focus,
-input:focus,
-textarea:focus,
-button:focus,
-select:focus {
-  outline: 3px solid #000;
-  outline-offset: 0;
-}
-
-a:focus, [tabindex="0"]:focus {
-  outline-offset: 3px;
-}
-
-.skip-links {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.skip-links > li::before {
-  content: none; /* Remove the bullets if nice lists is selected */
-}
-
-.skip-links a,
-.skip-links button {
-  padding: .5em .75em;
+.absolute {
   position: absolute;
-  top: -10em;
-  z-index: 10000; /* To make sure they're always on top */
-  background-color: #000;
-  border: 0;
-  color: #fff;
-  font-size: 1.125rem;
-  font-weight: bold;
-  text-decoration: none;
 }
 
-.skip-links a:focus,
-.skip-links button:focus {
-  outline-offset: 3px;
+.pin-tl {
   top: 0;
+  left: 0;
 }
 
-[aria-busy="true"] {
-  cursor: progress;
-}
-
-[aria-controls] {
-  cursor: pointer;
-}
-
-[aria-disabled] {
-  cursor: default;
-}
-
-.print-only {
-  display: none;
-  visibility: hidden;
-}
-
-.page-break-before {
-  page-break-before: always;
-}
-
-.page-break-after {
-  page-break-after: always;
-}
-
-.no-page-break-inside {
-  page-break-inside: avoid;
-}
-
-@media print {
-
-  /* stylelint-disable declaration-no-important */
-
-  .no-print {
-    display: none !important;
-    visibility: hidden !important;
-  }
-
-  .print-only,
-  .force-print {
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  /* stylelint-enable */
-
-  .visually-hidden.force-print {
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    padding: 0;
-    position: static;
-    width: auto;
-    border: 0;
-    clip: initial;
-    clip-path: none;
-  }
-
-  /*
-   * (c) Fabien Sa || MIT License
-   *     http://bafs.github.io/Gutenberg/
-   */
-
-  table,
-  blockquote,
-  pre,
-  code,
-  figure,
-  li,
-  hr,
-  ul,
-  ol,
-  a,
-  tr {
-    page-break-inside: avoid;
-  }
-
-  h1, h2, h3, h4, h5, h6, p, a {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-
-  h1 + p,
-  h2 + p,
-  h3 + p,
-  h4 + p,
-  h5 + p,
-  h6 + p {
-    page-break-before: avoid;
-  }
-
-  img {
-    page-break-after: auto;
-    page-break-before: auto;
-    page-break-inside: avoid;
-  }
-
-  /* stylelint-disable declaration-no-important */
-
-  pre {
-    white-space: pre-wrap !important;
-    word-wrap: break-word;
-  }
-
-  /* stylelint-enable */
-
-  /* End Gutenberg code */
-
-  /*
-   * (c) HTML5 Boilerplate || MIT License
-   *     https://html5boilerplate.com/
-   */
-
-  /* stylelint-disable declaration-no-important */
-
-  *, *::before, *::after, *::first-letter, *::first-line {
-    background: none transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  /* stylelint-enable */
-
-  a, a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after,
-  a.no-print-href::after,
-  a.href-no-print::after {
-    content: "";
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  /* End HTML5 Boilerplate code */
+.width-full, .w-1 {
+  width: 100%;
 }
